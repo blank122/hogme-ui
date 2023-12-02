@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hogme_ui/authentication/login_screen.dart';
+import 'package:hogme_ui/dashboard/tutorial.dart';
 import 'package:hogme_ui/utils/app_theme.dart';
 import 'package:hogme_ui/utils/for_content_widget.dart';
 import 'package:hogme_ui/utils/tap_content.dart';
@@ -151,7 +152,14 @@ class _HomeState extends State<Home> {
                 const ForContentWidget(
                   contentTitle: 'Tutorials',
                 ),
-                TapContent(onTap: () {}),
+                TapContent(onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Tutorial(),
+                    ),
+                  );
+                }),
               ],
             ),
             //tutorials data

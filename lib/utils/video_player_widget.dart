@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:video_player/video_player.dart';
 
 class FullScreenVideoPlayer extends StatelessWidget {
@@ -74,7 +75,16 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   child: VideoPlayer(_controller),
                 );
               } else {
-                return const Center(child: CircularProgressIndicator());
+                return Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: Container(
+                      color: Colors.white,
+                    ),
+                  ),
+                );
               }
             },
           ),

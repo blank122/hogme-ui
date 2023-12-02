@@ -101,8 +101,8 @@ class _BottonNavState extends State<BottonNav> {
             label: 'Message',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.post_add),
-            label: 'Post',
+            icon: Icon(Icons.person),
+            label: 'Account',
           ),
         ],
       ),
