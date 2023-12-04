@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hogme_ui/authentication/login_screen.dart';
+import 'package:hogme_ui/dashboard/investment.dart';
 import 'package:hogme_ui/dashboard/tutorial.dart';
 import 'package:hogme_ui/utils/app_theme.dart';
 import 'package:hogme_ui/utils/for_content_widget.dart';
@@ -152,14 +153,16 @@ class _HomeState extends State<Home> {
                 const ForContentWidget(
                   contentTitle: 'Tutorials',
                 ),
-                TapContent(onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Tutorial(),
-                    ),
-                  );
-                }),
+                TapContent(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Tutorial(),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
             //tutorials data
@@ -167,6 +170,28 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.all(10.0),
               child:
                   VideoPlayerWidget(videoPath: 'assets/videos/sample_vid.mp4'),
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const ForContentWidget(
+                  contentTitle: 'Investment',
+                ),
+                TapContent(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Investment(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 300, // Adjust the height as needed
+              child: Investment(),
             ),
           ],
         ),
